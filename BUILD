@@ -14,3 +14,18 @@ cc_test(
         "@gtest//:gtest_main",
     ],
 )
+
+cc_library(
+    name = "cube_state",
+    srcs = ["cube_state.cc"],
+    hdrs = ["cube_state.h"],
+)
+
+cc_test(
+    name = "cube_state_test",
+    srcs = ["cube_state_test.cc"],
+    deps = [
+        "//:cube_state",
+        "@gtest//:gtest_main",
+    ],
+)
