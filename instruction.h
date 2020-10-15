@@ -26,7 +26,7 @@ public:
   };
   Instruction(Turn turn);
 
-  // Get string presentation of this instruction.
+  // Gets string presentation of this instruction.
   std::string GetName() const;
 
 private:
