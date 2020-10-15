@@ -8,6 +8,17 @@
  */
 class CubeState {
 public:
+  /**
+   * Face refers to one face of a cube. The expanded view of a cube below shows
+   * the 6 faces of a cube and their names.
+   *     -----
+   *     | U |
+   * -----------------
+   * | L | F | R | B |
+   * -----------------
+   *     | D |
+   *     -----
+   */
   enum Face {
     F, // Front
     B, // Back
@@ -16,6 +27,18 @@ public:
     U, // Up
     D  // Down
   };
+
+  /**
+   * Position refers to one block on a face of a cube. The below view shows the
+   * 9 positions on a face and their names.
+   * ---------------------
+   * | C_LU | E_U | C_RU |
+   * ---------------------
+   * | E_L  | C   | E_R  |
+   * ---------------------
+   * | C_LD | E_D | C_RD |
+   * ---------------------
+   */
   enum Position {
     C,    // Center
     E_L,  // Edge - Left
@@ -30,7 +53,11 @@ public:
   enum Color { COLOR_UNSPECIFIED, RED, BLUE, ORANGE, GREEN, WHITE, YELLOW };
 
   CubeState();
+
+  // Sets color of a piece.
   void SetColor(const Face face, const Position position, const Color color);
+
+  // Gets color of a piece.
   Color GetColor(const Face face, const Position position) const;
 
 private:
