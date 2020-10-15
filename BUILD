@@ -29,3 +29,18 @@ cc_test(
         "@gtest//:gtest_main",
     ],
 )
+
+cc_library(
+    name = "instruction",
+    srcs = ["instruction.cc"],
+    hdrs = ["instruction.h"],
+)
+
+cc_test(
+    name = "instruction_test",
+    srcs = ["instruction_test.cc"],
+    deps = [
+        "//:instruction",
+        "@gtest//:gtest_main",
+    ],
+)
