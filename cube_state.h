@@ -63,6 +63,6 @@ public:
 private:
   const static int N_FACES = 6;
   const static int N_POSITIONS = 9;
-  Color colors[N_FACES][N_POSITIONS];
+  Color _colors[N_FACES][N_POSITIONS];
 };
 #endif
