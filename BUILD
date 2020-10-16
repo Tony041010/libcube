@@ -44,3 +44,24 @@ cc_test(
         "@gtest//:gtest_main",
     ],
 )
+
+cc_library(
+    name = "util",
+    srcs = ["util.cc"],
+    hdrs = ["util.h"],
+    deps = [
+        "//:cube_state",
+        "//:instruction",
+    ],
+)
+
+cc_test(
+    name = "util_test",
+    srcs = ["util_test.cc"],
+    deps = [
+        "//:cube_state",
+        "//:instruction",
+        "//:util",
+        "@gtest//:gtest_main",
+    ],
+)
