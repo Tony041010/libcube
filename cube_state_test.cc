@@ -4,10 +4,12 @@
 
 TEST(CubeStateTest, InitCubeStateSucceed) {
   CubeState cube_state;
-  EXPECT_EQ(CubeState::Color::COLOR_UNSPECIFIED,
+  EXPECT_EQ(CubeState::Color::GREEN,
             cube_state.GetColor(CubeState::Face::F, CubeState::Position::E_L));
-  EXPECT_EQ(CubeState::Color::COLOR_UNSPECIFIED,
+  EXPECT_EQ(CubeState::Color::WHITE,
             cube_state.GetColor(CubeState::Face::D, CubeState::Position::C_RD));
+  EXPECT_EQ(CubeState::Color::RED,
+            cube_state.GetColor(CubeState::Face::L, CubeState::Position::C_RU));
 }
 
 TEST(CubeStateTest, SetAndGetColorSucceed) {
