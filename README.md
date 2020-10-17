@@ -24,17 +24,17 @@ Make a 'F' turn:
 Cube cube;
 cube.Move(Turn::F);
 EXPECT_EQ("      -------\n"
-					"      |Y|Y|Y|\n"
-					"      |Y|Y|Y|\n"
-					"      |R|R|R|\n"
-					"-------------------------\n"
-					"|R|R|W|G|G|G|Y|O|O|B|B|B|\n"
-					"|R|R|W|G|G|G|Y|O|O|B|B|B|\n"
-					"|R|R|W|G|G|G|Y|O|O|B|B|B|\n"
-					"-------------------------\n"
-					"      |O|O|O|\n"
-					"      |W|W|W|\n"
-					"      |W|W|W|\n"
-					"      -------\n",
-					cube.GetState().GetDebugString());
+          "      |Y|Y|Y|\n"
+          "      |Y|Y|Y|\n"
+          "      |R|R|R|\n"
+          "-------------------------\n"
+          "|R|R|W|G|G|G|Y|O|O|B|B|B|\n"
+          "|R|R|W|G|G|G|Y|O|O|B|B|B|\n"
+          "|R|R|W|G|G|G|Y|O|O|B|B|B|\n"
+          "-------------------------\n"
+          "      |O|O|O|\n"
+          "      |W|W|W|\n"
+          "      |W|W|W|\n"
+          "      -------\n",
+          cube.GetState().GetDebugString());
 ```
