@@ -31,3 +31,21 @@ TEST(CubeStateTest, SetAndGetColorTwiceSucceed) {
   EXPECT_EQ(CubeState::Color::BLUE,
             cube_state.GetColor(CubeState::Face::F, CubeState::Position::E_L));
 }
+
+TEST(CubeStateTest, GetDebugStringSucceed) {
+  CubeState cube_state;
+  EXPECT_EQ("      -------\n"
+            "      |Y|Y|Y|\n"
+            "      |Y|Y|Y|\n"
+            "      |Y|Y|Y|\n"
+            "-------------------------\n"
+            "|R|R|R|G|G|G|O|O|O|B|B|B|\n"
+            "|R|R|R|G|G|G|O|O|O|B|B|B|\n"
+            "|R|R|R|G|G|G|O|O|O|B|B|B|\n"
+            "-------------------------\n"
+            "      |W|W|W|\n"
+            "      |W|W|W|\n"
+            "      |W|W|W|\n"
+            "      -------\n",
+            cube_state.GetDebugString());
+}

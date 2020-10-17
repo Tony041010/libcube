@@ -26,6 +26,9 @@ public:
   };
   Instruction(Turn turn);
 
+  // Gets turn.
+  const Turn &GetTurn() const;
+
   // Gets string presentation of this instruction.
   std::string GetName() const;
 

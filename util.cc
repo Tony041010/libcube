@@ -4,7 +4,6 @@
 #include "instruction.h"
 #include "util.h"
 
-namespace util {
 namespace {
 using Face = CubeState::Face;
 using Turn = Instruction::Turn;
@@ -18,4 +17,3 @@ Face GetTargetFace(Turn turn) {
   };
   return turn_to_target_face[turn];
 }
-} // namespace util

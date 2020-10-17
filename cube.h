@@ -1,13 +1,23 @@
 #ifndef CUBE_H
 #define CUBE_H
 
+#include "cube_state.h"
+#include "instruction.h"
+
 class Cube {
 public:
-  Cube(int size);
-  int GetSize();
+  /**
+   * Moves the cube with a given instruction.
+   */
+  void Move(Instruction instruction);
+
+  /**
+   * Gets a copy of the current cube state.
+   */
+  CubeState GetState() const;
 
 private:
-  const int _size;
+  CubeState _cube_state;
 };
 
 #endif

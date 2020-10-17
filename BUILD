@@ -4,6 +4,11 @@ cc_library(
     name = "cube",
     srcs = ["cube.cc"],
     hdrs = ["cube.h"],
+    deps = [
+        "//:cube_state",
+        "//:instruction",
+        "//:util",
+    ],
 )
 
 cc_test(
@@ -11,6 +16,9 @@ cc_test(
     srcs = ["cube_test.cc"],
     deps = [
         "//:cube",
+        "//:cube_state",
+        "//:instruction",
+        "//:util",
         "@gtest//:gtest_main",
     ],
 )
