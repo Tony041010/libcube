@@ -1,5 +1,11 @@
 # Cube
 
+Cube (I haven't found a better name yet) is a C++ library that provides
+simulation, rendering, and alogirthms of [Rubik's
+Cube](https://en.wikipedia.org/wiki/Rubik%27s_Cube). I design Cube for
+developers to build applications on-top of it, and we also provide example
+applications.
+
 ## Prerequisite
 
 - Install [Bazel](https://docs.bazel.build/versions/master/install.html).
@@ -38,3 +44,17 @@ EXPECT_EQ("      -------\n"
           "      -------\n",
           cube.GetState().GetDebugString());
 ```
+
+## Future Architecture
+
+Today, I have only implemented the simulation part, and this section describes
+the architecture I'm planning to move forward.
+
+Cube library is composed of three components:
+
+- **Simulation** - the core component - simulates cube states after given turns.
+- **Renderer** reads a simulated cube state and generates human-friendly images.
+- **Algorithm** contains cubing algorithms that are compatible with Simulation.
+
+Lastly, **Application** component contains applications that uses Cube library,
+e.g. a trainer app.
