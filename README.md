@@ -1,7 +1,7 @@
 # Cube
 
 Cube (I haven't found a better name yet) is a C++ library that provides
-simulation, rendering, and alogirthms of [Rubik's
+simulation, rendering, and algorithms of [Rubik's
 Cube](https://en.wikipedia.org/wiki/Rubik%27s_Cube). I design Cube for
 developers to build applications on-top of it, and we also provide example
 applications.
