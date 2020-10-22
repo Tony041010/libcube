@@ -7,3 +7,11 @@ http_archive(
     strip_prefix = "googletest-release-1.8.0",
     url = "https://github.com/google/googletest/archive/release-1.8.0.zip",
 )
+
+http_archive(
+    name = "glfw",
+    build_file = "@//:glfw.BUILD",
+    sha256 = "e10f0de1384d75e6fc210c53e91843f6110d6c4f3afbfb588130713c2f9d8fe8",
+    strip_prefix = "glfw-3.2.1",
+    url = "https://github.com/glfw/glfw/archive/3.2.1.tar.gz",
+)

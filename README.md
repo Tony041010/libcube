@@ -9,6 +9,7 @@ applications.
 ## Prerequisite
 
 - Install [Bazel](https://docs.bazel.build/versions/master/install.html).
+- (MacOS) Link X11: `sudo ln -s /opt/X11/include/X11 /usr/local/include/X11`
 
 ## Build
 
