@@ -8,19 +8,18 @@ applications.
 
 ## Prerequisite
 
-- Install [Bazel](https://docs.bazel.build/versions/master/install.html).
-- (MacOS) Link X11: `sudo ln -s /opt/X11/include/X11 /usr/local/include/X11`
+- Install [CMake](https://formulae.brew.sh/formula/cmake).
 
 ## Build
 
 ```bash
-$ bazel build :all
+$ cmake . && make
 ```
 
 ## Test
 
 ```bash
-$ bazel test :all
+$ cmake . && make test
 ```
 
 ## Example Code
