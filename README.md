@@ -18,8 +18,10 @@ $ cmake . && make
 
 ## Test
 
+After build:
+
 ```bash
-$ cmake . && make test
+$ make test
 ```
 
 ## Example Code
