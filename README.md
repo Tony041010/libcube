@@ -1,14 +1,16 @@
-# Cube
+# LibCube
 
-Cube (I haven't found a better name yet) is a C++ library that provides
-simulation, rendering, and algorithms of [Rubik's
-Cube](https://en.wikipedia.org/wiki/Rubik%27s_Cube). I design Cube for
-developers to build applications on-top of it, and we also provide example
-applications.
+LibCube is a C++ library that provides simulation, rendering, and algorithms of [Rubik's
+Cube](https://en.wikipedia.org/wiki/Rubik%27s_Cube). I design LibCube for
+developers to build applications on-top of it.
 
 ## Prerequisite
 
 - Install [CMake](https://formulae.brew.sh/formula/cmake).
+
+## Caveat
+
+We have only developmented and tested this project on Mac OS.
 
 ## Build
 
@@ -52,11 +54,8 @@ EXPECT_EQ("      -------\n"
 Today, I have only implemented the simulation part, and this section describes
 the architecture I'm planning to move forward.
 
-Cube library is composed of three components:
+LibCube is composed of three components:
 
 - **Simulation** - the core component - simulates cube states after given turns.
 - **Renderer** reads a simulated cube state and generates human-friendly images.
 - **Algorithm** contains cubing algorithms that are compatible with Simulation.
-
-Lastly, **Application** component contains applications that uses Cube library,
-e.g. a trainer app.
