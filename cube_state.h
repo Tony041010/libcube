@@ -2,6 +2,7 @@
 #define CUBE_STATE_H
 
 #include <string>
+#include <vector>
 
 /**
  * CubeState stores the colors of each piece of a cube. CubeState doesn't
@@ -22,12 +23,13 @@ public:
    *     -----
    */
   enum Face {
-    F, // Front
-    B, // Back
-    L, // Left
-    R, // Right
-    U, // Up
-    D  // Down
+    F,        // Front
+    B,        // Back
+    L,        // Left
+    R,        // Right
+    U,        // Up
+    D,        // Down
+    FACE_SIZE // Marker for getting the size.
   };
 
   /**
@@ -42,15 +44,16 @@ public:
    * ---------------------
    */
   enum Position {
-    C,    // Center
-    E_L,  // Edge - Left
-    E_R,  // Edge - Right
-    E_U,  // Edge - Up
-    E_D,  // Edge - Down
-    C_LU, // Corner - Left-Up
-    C_LD, // Corner - Left-Down
-    C_RU, // Corner - Right-Up
-    C_RD, // Corner - Right-Down
+    C,            // Center
+    E_L,          // Edge - Left
+    E_R,          // Edge - Right
+    E_U,          // Edge - Up
+    E_D,          // Edge - Down
+    C_LU,         // Corner - Left-Up
+    C_LD,         // Corner - Left-Down
+    C_RU,         // Corner - Right-Up
+    C_RD,         // Corner - Right-Down
+    POSITION_SIZE // Marker for getting the size.
   };
   enum Color { COLOR_UNSPECIFIED, RED, BLUE, ORANGE, GREEN, WHITE, YELLOW };
 
@@ -62,13 +65,17 @@ public:
   // Gets color of a piece.
   Color GetColor(const Face face, const Position position) const;
 
+  // Gets all faces.
+  static std::vector<Face> GetFaces();
+
+  // Gets all positions per face.
+  static std::vector<Position> GetPositions();
+
   // Returns debugging information.
   std::string GetDebugString() const;
 
 private:
-  const static int N_FACES = 6;
-  const static int N_POSITIONS = 9;
-  Color _colors[N_FACES][N_POSITIONS];
+  Color _colors[FACE_SIZE][POSITION_SIZE];
 
   std::string GetColorAlias(const Face face, const Position position) const;
 };

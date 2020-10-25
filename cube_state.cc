@@ -3,6 +3,7 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <vector>
 
 CubeState::CubeState() {
   std::map<Face, Color> face_to_color = {
@@ -10,7 +11,7 @@ CubeState::CubeState() {
       {Face::B, Color::BLUE},   {Face::L, Color::RED},
       {Face::U, Color::YELLOW}, {Face::D, Color::WHITE}};
   for (const auto &[face, color] : face_to_color) {
-    for (int position = 0; position < N_POSITIONS; position++) {
+    for (int position = 0; position < POSITION_SIZE; position++) {
       _colors[face][position] = color;
     }
   }
@@ -24,6 +25,22 @@ void CubeState::SetColor(const Face face, const Position position,
 CubeState::Color CubeState::GetColor(const Face face,
                                      const Position position) const {
   return _colors[face][position];
+}
+
+std::vector<CubeState::Face> CubeState::GetFaces() {
+  std::vector<CubeState::Face> faces = {Face::F, Face::B, Face::L,
+                                        Face::R, Face::U, Face::D};
+  assert(Face::FACE_SIZE == faces.size());
+  return faces;
+}
+
+std::vector<CubeState::Position> CubeState::GetPositions() {
+  std::vector<CubeState::Position> positions = {
+      Position::C,    Position::E_L,  Position::E_R,
+      Position::E_U,  Position::E_D,  Position::C_LU,
+      Position::C_LD, Position::C_RU, Position::C_RD};
+  assert(Position::POSITION_SIZE == positions.size());
+  return positions;
 }
 
 std::string CubeState::GetColorAlias(const Face face,
