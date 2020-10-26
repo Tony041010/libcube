@@ -7,6 +7,7 @@ developers to build applications on-top of it.
 ## Prerequisite
 
 - Install [CMake](https://formulae.brew.sh/formula/cmake).
+- Install [pngwriter](https://github.com/pngwriter/pngwriter#installation).
 
 ## Caveat
 
@@ -26,28 +27,21 @@ After build:
 $ make test
 ```
 
-## Example Code
+## Example
 
-Make a 'F' turn:
+Make a 'F' turn then render:
 
 ```cc
 Cube cube;
-cube.Move(Turn::F);
-EXPECT_EQ("      -------\n"
-          "      |Y|Y|Y|\n"
-          "      |Y|Y|Y|\n"
-          "      |R|R|R|\n"
-          "-------------------------\n"
-          "|R|R|W|G|G|G|Y|O|O|B|B|B|\n"
-          "|R|R|W|G|G|G|Y|O|O|B|B|B|\n"
-          "|R|R|W|G|G|G|Y|O|O|B|B|B|\n"
-          "-------------------------\n"
-          "      |O|O|O|\n"
-          "      |W|W|W|\n"
-          "      |W|W|W|\n"
-          "      -------\n",
-          cube.GetState().GetDebugString());
+cube.Move(Instruction::F);
+
+Renderer renderer;
+renderer.RenderExpandedView(cube.GetState(), "/tmp/out.png");
 ```
+
+Output:
+
+![](https://raw.githubusercontent.com/heronyang/libcube/main/test_files/renderer_sample1.png)
 
 ## Future Architecture
 

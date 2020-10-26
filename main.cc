@@ -1,23 +1,13 @@
-#include <GLUT/glut.h>
+#include <vector>
 
-void displayMe(void) {
-  glClear(GL_COLOR_BUFFER_BIT);
-  glBegin(GL_POLYGON);
-  glVertex3f(0.0, 0.0, 0.0);
-  glVertex3f(0.5, 0.0, 0.0);
-  glVertex3f(0.5, 0.5, 0.0);
-  glVertex3f(0.0, 0.5, 0.0);
-  glEnd();
-  glFlush();
-}
+#include "cube.h"
+#include "cube_state.h"
+#include "renderer.h"
 
-int main(int argc, char **argv) {
-  glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_SINGLE);
-  glutInitWindowSize(300, 300);
-  glutInitWindowPosition(100, 100);
-  glutCreateWindow("Hello world from Badprog.com :D");
-  glutDisplayFunc(displayMe);
-  glutMainLoop();
-  return 0;
+int main() {
+  Cube cube;
+  cube.Move(Instruction::F);
+
+  Renderer renderer;
+  renderer.RenderExpandedView(cube.GetState(), "/tmp/out.png");
 }

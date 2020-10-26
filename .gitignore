@@ -39,3 +39,4 @@ _deps
 build/
 *.a
 test*
+main

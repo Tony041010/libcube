@@ -8,6 +8,7 @@ namespace {
 using Face = CubeState::Face;
 using Turn = Instruction::Turn;
 } // namespace
+
 Face GetTargetFace(Turn turn) {
   std::map<Turn, Face> turn_to_target_face = {
       {Turn::F, Face::F},  {Turn::R, Face::R},  {Turn::B, Face::B},
